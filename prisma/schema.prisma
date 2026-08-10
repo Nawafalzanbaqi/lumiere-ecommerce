@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String   @unique
+  password  String?
+  role      String   @default("USER") // ADMIN or USER
+  orders    Order[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  id        String    @id @default(cuid())
+  nameEn    String
+  nameAr    String
+  slug      String    @unique
+  products  Product[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Product {
+  id          String      @id @default(cuid())
+  titleEn     String
+  titleAr     String
+  slug        String      @unique
+  descEn      String
+  descAr      String
+  price       Float
+  stock       Int         @default(0)
+  imageUrl    String?
+  category    Category    @relation(fields: [categoryId], references: [id])
+  categoryId  String
+  orderItems  OrderItem[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Order {
+  id          String      @id @default(cuid())
+  user        User?       @relation(fields: [userId], references: [id])
+  userId      String?
+  status      String      @default("PENDING") // PENDING, PAID, SHIPPED, DELIVERED
+  totalAmount Float
+  items       OrderItem[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId   String
+  product   Product @relation(fields: [productId], references: [id])
+  productId String
+  quantity  Int
+  price     Float
+}

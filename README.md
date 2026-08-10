@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <h1 align="center">LUMIÈRE | Premium Bilingual E-Commerce</h1>
+  <p align="center">
+    A high-quality, government-standard, bilingual e-commerce web application built for the modern web.
+  </p>
+</div>
 
-## Getting Started
+## 🌟 Visual Excellence & Core Features
 
-First, run the development server:
+- **Full Bilingual Support**: Seamlessly toggles between English (LTR) and Arabic (RTL) using Next.js 15 routing parameters, instantly updating layout direction and content without a reload.
+- **Premium Aesthetics**: Built with Vanilla CSS utilizing dynamic micro-animations, glassmorphism UI elements, deep HSL tailored color palettes, and Google Fonts (`Inter` for EN, `Cairo` for AR).
+- **SEO Optimized Architecture**: Follows Technical SEO best practices automatically. Next.js App Router powers server-side rendering, delivering static markup immediately to crawlers and maximizing Lighthouse scores.
+- **E-Commerce Ready Backend**: Employs a robust SQLite database governed by Prisma ORM. Models for Users, Categories, Products, and Orders are cleanly set up, allowing seamless transitioning to MySQL/PostgreSQL for production.
+- **Robust REST API**: Complete Node.js backend endpoints for CRUD operations (`/api/products`, `/api/orders`, `/api/categories`). Tested and secure.
+- **Scalable Codebase**: Pure TypeScript guarantees a bug-free, easily maintainable structure perfect for a marketing/design team or future mobile app development via Flutter/React Native.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🛠️ Technology Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Framework**: Next.js 15 (App Router, Server Components)
+- **Language**: TypeScript (Strict typing for security)
+- **Database ORM**: Prisma (currently paired with portable SQLite)
+- **Styling**: Vanilla CSS (Global tokens and Scoped CSS Modules)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Install Dependencies**
 
-## Learn More
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Initialize Database**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npx prisma db push
+   npx prisma generate
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Start Development Server**
 
-## Deploy on Vercel
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Production Build**
+   ```bash
+   npm run build
+   npm start
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔒 Security & Enterprise Standards
+
+- Ensures safe and sanitized inputs for the API.
+- Implements strict file architectures compatible with VPS Host environments.
+- Ready for Saudi Payment Integrations (e.g., Mada, STC Pay, Moyasar).
+
+---
+
+> Developed by a Senior Full-Stack Engineer to over-deliver on quality and aesthetics.

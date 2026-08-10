@@ -1,0 +1,18 @@
+.langBtn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-base);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: 0.9rem;
+}
+
+.langBtn:hover {
+  background: var(--surface-hover);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
